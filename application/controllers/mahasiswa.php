@@ -6,20 +6,20 @@ class mahasiswa extends CI_Controller
 
 	public function index()
 	{
-		$this->load->view('v_home');
+		$this->load->view('desaintemplate/v_home');
 	}
 
 	public function tambahdata()
 	{
-		$this->load->view('v_tambahdata');
+		$this->load->view('desaintemplate/v_tambahdata');
 	}
 
 	public function project()
 	{
-		$this->load->view('v_project');
+		$this->load->view('desaintemplate/v_project');
 	}
 	public function info()
 	{
-		$this->load->view('v_info');
+		$this->load->view('desaintemplate/v_info');
 	}
 }

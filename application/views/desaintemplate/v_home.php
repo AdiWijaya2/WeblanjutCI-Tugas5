@@ -53,7 +53,7 @@
       </div>
 
       <div class="card-body">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped table-hover">
           <thead class="text-center">
             <tr>
               <th scope="col">Nomor</th>
@@ -64,6 +64,7 @@
               <th scope="col">Aksi</th>
             </tr>
           </thead>
+
           <tbody class="text-center">
             <tr>
               <td scope="row">1</td>
@@ -117,8 +118,12 @@
             </tr>
           </tbody>
         </table>
+
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
   <br>
 

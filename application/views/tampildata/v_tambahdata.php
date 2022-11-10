@@ -20,16 +20,16 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/mahasiswa/index') ?>">Home</a>
+              <a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/kelascontroller/index') ?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/mahasiswa/tambahdata') ?>">Tambah Data</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/kelascontroller/tambahdata') ?>">Tambah Data</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/mahasiswa/project') ?>">Project</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/kelascontroller/project') ?>">Project</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/mahasiswa/info') ?>">Informasi</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/kelascontroller/info') ?>">Informasi</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -71,15 +71,11 @@
             </select>
           </div>
           <br>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Centang disini jika data sudah benar</label>
-          </div>
           <div class="d-grid gap-2">
             <button class="btn btn-primary" type="button">Simpan</button>
             <button class="btn btn-danger" type="button">Batal</button>
           </div>
-        </form><br>
+        </form><br><br>
       </div>
     </div>
   </div>
