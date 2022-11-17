@@ -20,16 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/kelascontroller/index') ?>">Home</a>
+              <a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/Aset/index') ?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/kelascontroller/tambahdata') ?>">Tambah Data</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/Aset/project') ?>">Project</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/kelascontroller/project') ?>">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/kelascontroller/info') ?>">Informasi</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/Aset/info') ?>">Informasi</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -49,18 +46,26 @@
   <div class="container">
     <div class="card">
       <div class="card-header bg-secondary bg-opacity-25">
-        Data Mahasiswa
+        Data Aset
       </div>
 
       <div class="card-body">
-        <table class="table table-bordered table-striped table-hover">
+        <?php echo $this->session->flashdata('pesan');
+        ?>
+        <div><a href="<?= site_url('Aset/tambahaset') ?>" class="btn btn-primary mb-2 btn-md rounded-3">Tambah Data</a>
+          <form class="d-flex float-sm-end" role="search">
+            <input class="form-control me-2 mb-4 rounded-5" type="search" placeholder="" aria-label="Search">
+            <button class="btn btn-success mb-4 rounded-5" type="submit">Search</button>
+          </form>
+        </div>
+        <table class="table table-bordered table-striped table-hover mt-sm-3">
           <thead class="text-center">
             <tr>
               <th scope="col">Nomor</th>
-              <th scope="col">Nama</th>
-              <th scope="col">Nim</th>
-              <th scope="col">Alamat</th>
-              <th scope="col">Program Studi</th>
+              <th scope="col">Nama Aset</th>
+              <th scope="col">Jenis</th>
+              <th scope="col">Lokasi</th>
+              <th scope="col">Jumlah</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>
@@ -68,17 +73,18 @@
           <tbody class="text-center">
             <?php
             $nomor = 1;
-            foreach ($datamahasiswa as $item) {
+            foreach ($dataaset as $item) {
             ?>
               <tr>
                 <td><?php echo $nomor++; ?></td>
-                <td><?php echo $item->nama; ?></td>
-                <td><?php echo $item->nim; ?></td>
-                <td><?php echo $item->alamat; ?></td>
-                <td><?php echo $item->prodi; ?></td>
-                <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
-                  <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                <td><?php echo $item->nama_aset; ?></td>
+                <td><?php echo $item->jenis; ?></td>
+                <td><?php echo $item->lokasi; ?></td>
+                <td><?php echo $item->jumlah; ?></td>
+                <td><?php echo anchor('Aset/edit/' . $item->id, '<div class="btn btn-warning btn-sm ms-1 mb-1">Edit</div>') ?>
+                  <?php echo anchor('Aset/hapus_data/' . $item->id, '<div class="btn btn-danger btn-sm ms-1 mb-1">Delete</div>') ?>
                 </td>
+
               </tr>
             <?php
             }

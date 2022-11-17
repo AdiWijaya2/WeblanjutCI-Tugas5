@@ -20,16 +20,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/mahasiswa/index') ?>">Home</a>
+              <a class="nav-link active" aria-current="page" href="<?php echo base_url('index.php/Aset/index') ?>">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/mahasiswa/tambahdata') ?>">Tambah Data</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/Aset/project') ?>">Project</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/mahasiswa/project') ?>">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('index.php/mahasiswa/info') ?>">Informasi</a>
+              <a class="nav-link" href="<?php echo base_url('index.php/Aset/info') ?>">Informasi</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -66,56 +63,23 @@
           </thead>
 
           <tbody class="text-center">
-            <tr>
-              <td scope="row">1</td>
-              <td>Adi</td>
-              <td>2001050006</td>
-              <td>Cakra Selatan</td>
-              <td>D3 RPL</td>
-              <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">2</td>
-              <td>Dhira</td>
-              <td>2001050004</td>
-              <td>Karang Baru</td>
-              <td>D3 RPL</td>
-              <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">3</td>
-              <td>Ari</td>
-              <td>2001050001</td>
-              <td>Seganteng</td>
-              <td>D3 RPL</td>
-              <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">4</td>
-              <td>Novi</td>
-              <td>2001050008</td>
-              <td>Karang Baru</td>
-              <td>D3 RPL</td>
-              <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
-            <tr>
-              <td scope="row">5</td>
-              <td>Aan</td>
-              <td>2001050005</td>
-              <td>Lotim</td>
-              <td>D3 RPL</td>
-              <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
+            <?php
+            $nomor = 1;
+            foreach ($datamahasiswa as $item) {
+            ?>
+              <tr>
+                <td><?php echo $nomor++; ?></td>
+                <td><?php echo $item->nama; ?></td>
+                <td><?php echo $item->nim; ?></td>
+                <td><?php echo $item->alamat; ?></td>
+                <td><?php echo $item->prodi; ?></td>
+                <td><button type="button" class="btn btn-warning btn-sm">Edit</button>
+                  <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+              </tr>
+            <?php
+            }
+            ?>
           </tbody>
         </table>
 

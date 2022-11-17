@@ -12,12 +12,7 @@ class KelasController extends CI_Controller
     public function index()
     {
         $data['datamahasiswa'] = $this->KelasModel->getAll();
-        $this->load->view('tampildata/v_home', $data);
-    }
-
-    public function tambahdata()
-    {
-        $this->load->view('tampildata/v_tambahdata');
+        $this->load->view('tampildata/index', $data);
     }
 
     public function project()
